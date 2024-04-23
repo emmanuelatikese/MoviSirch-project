@@ -33,13 +33,20 @@ const login = (req, res) => {
         if (err) return res.json(err);
         if (!(bcrypt.compareSync(values[1], data[0].pwd))) return res.status(404).json("Wrong password");
 
-        const webtoken = jwt.sign({id: data[0].id}, "webtoken");;
-        res.cookie("access_token", webtoken, {
+        const token = jwt.sign({id: data[0].id}, "token");;
+        res.cookie("access_token", token, {
             httpOnly: true
-        });
+        }).json("cookie was a success");
     })
 }
 
 
 
 //logout
+
+const logout = (req, res) => {
+    res.clearCookie("access_token", {
+        sameSite: "none",
+        secure: true
+    })
+}
