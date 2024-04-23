@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 // registrations
 
 
-const register = (req, res) => {
+export const register = (req, res) => {
     const values = [ req.body.username, req.body.email, req.body.pwd]
     db.query("SELECT * FROM users WHERE username = ? OR email = ? ", 4000, [values[0], values[1]], (err, data)=>{
         if (data.length) return res.status(409).json("This account already exist");
@@ -26,7 +26,7 @@ const register = (req, res) => {
 
 // login
 
-const login = (req, res) => {
+export const login = (req, res) => {
     values = [req.body.username, req.body.pwd]
     db.query("SELECT pwd FROM users WHERE username = ?", values[0], (err, data)=>{
         if (data.length === 0) return res.json("Username don't exist");
@@ -44,7 +44,7 @@ const login = (req, res) => {
 
 //logout
 
-const logout = (req, res) => {
+export const logout = (req, res) => {
     res.clearCookie("access_token", {
         sameSite: "none",
         secure: true
