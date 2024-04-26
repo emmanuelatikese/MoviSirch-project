@@ -1,0 +1,49 @@
+$main-color: #0C0C0C;
+$dark-vibz: #070F2B;
+$bcolor: #4477CE;
+
+
+.App-container{
+    background-color: $main-color;
+    height: 100vh;
+
+
+    .register-container{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20%;
+        form{
+            display: flex;
+            flex-direction: column;
+            gap:30px;
+            justify-content: center;
+            align-items: center;
+
+            input{
+                border: none;
+                border-bottom:2px solid $bcolor;
+                color: white;
+                background-color: $main-color;
+                outline: none;
+                border-radius: 2px;
+                width: 150%;
+            }
+            button{
+                border: none;
+                border-radius: 5px;
+                width: 40%;
+                padding: 5px;
+                background-color: $bcolor;
+                color: $main-color;
+                cursor: pointer;
+                &:hover{
+                    background-color: $main-color;
+                    color: $bcolor;
+                    border: 1px solid $bcolor;
+                }
+            }
+        }
+    }
+}
