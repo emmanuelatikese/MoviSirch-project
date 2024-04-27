@@ -1,11 +1,11 @@
-const db = require("./db");
+const db = require("../db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 // registrations
 
 
-export const register = (req, res) => {
+const register = (req, res) => {
     const values = [ req.body.username, req.body.email, req.body.pwd]
     db.query("SELECT * FROM users WHERE username = ? OR email = ? ", 4000, [values[0], values[1]], (err, data)=>{
         if (data.length) return res.status(409).json("This account already exist");
@@ -26,7 +26,7 @@ export const register = (req, res) => {
 
 // login
 
-export const login = (req, res) => {
+const login = (req, res) => {
     values = [req.body.username, req.body.pwd]
     db.query("SELECT pwd FROM users WHERE username = ?", values[0], (err, data)=>{
         if (data.length === 0) return res.json("Username don't exist");
@@ -44,9 +44,11 @@ export const login = (req, res) => {
 
 //logout
 
-export const logout = (req, res) => {
+const logout = (req, res) => {
     res.clearCookie("access_token", {
         sameSite: "none",
         secure: true
     })
 }
+
+module.exports = {register, login, logout};
