@@ -2,8 +2,8 @@ import React from 'react'
 
 const footer = () => {
   return (
-    <div>
-      This is footer.
+    <div className='footer-container'>
+      <p>React was used for this project.</p>
     </div>
   )
 }
