@@ -6,7 +6,7 @@ import ResultComp from "../components/result";
 import axios from 'axios';
 const home = () => {
 const [error, setErr] = useState("");
-const [values, setValues] = useState([]);
+const [values, setValues] = useState(null);
 const [search, setSearch] = useState("");
 const [show, setShow] = useState(false);
 
@@ -33,9 +33,8 @@ const serachHandler = async()=>{
     setValues([]);
     const res = await axios.request(options);
     const data = res.data.results;
-    setValues(data);
+    await setValues(data);
     setShow(true);
-    console.log(data);
     console.log(values);
   }
   catch(err){
@@ -47,8 +46,8 @@ const serachHandler = async()=>{
 
   return (
     <div className='home-container'>
-    <h1>Hi</h1>
-    <p>Welcome to moviSirch</p>
+    <h1>Hi, welcome</h1>
+    <p className='name-title'>moviSirch</p>
     <div className='inputContainer'>
     <button onClick={serachHandler}><img src={Searchpic} className='search-img'/></button>
       

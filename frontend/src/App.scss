@@ -137,6 +137,9 @@ $headercolor:#0ED2F7;
         gap: 100px;
         align-items: center;
 
+        .name-title{
+            font-size: 50px;
+        }
         .inputContainer{
             display: flex;
             gap: 10px;
@@ -146,6 +149,7 @@ $headercolor:#0ED2F7;
             overflow: hidden;
             border-radius: 35px;
             box-shadow:  0 0 5px;
+            align-items: center;
         }
 
         .placeholder{
@@ -168,7 +172,7 @@ $headercolor:#0ED2F7;
             background-size: cover;
             background-blend-mode: multiply;
             
-            P{
+            .p-result{
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 width: 400px;
             }
