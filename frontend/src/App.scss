@@ -1,12 +1,24 @@
-$main-color: #0C0C0C;
-$dark-vibz: #070F2B;
-$bcolor: #4477CE;
+@font-face {
+  font-family: 'Mont';
+  src: url("/fonts/Montserrat.ttf") format("truetype");
+}
 
+
+
+
+
+
+$main-color: #171010;
+$dark-vibz: #413F42;
+$bcolor: #7F8487;
+$headercolor:#0ED2F7;
 
 .App-container{
     background-color: $main-color;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     color: white;
+    font-family: Mont;
 
 
     .register-container{
@@ -20,46 +32,51 @@ $bcolor: #4477CE;
         form{
             display: flex;
             flex-direction: column;
-            gap:20px;
+            gap:30px;
             padding: 10px;
-            width: 500px;
+            width: 400px;
             border:1px solid white;
             align-items: center;
-            height: 450px;
+            height: 480px;
             background-color: $dark-vibz;
             border: none;
-            border-radius: 5px;
+            border-radius: 15px;
+            box-shadow: 0 0 5px ;
             
+
             
             input{
                 border: none;
-                border-bottom:2px solid $bcolor;
+                border-bottom:2px solid none;
                 color: white;
                 background-color: $main-color;
                 outline: none;
-                border-radius: 2px;
+                border-radius: 10px;
                 width: 250px;
-                padding: 5px;
+                padding: 15px;
+                box-shadow:  0 0 5px black;
+                
             }
+            
             button{
                 border: none;
-                border-radius: 5px;
-                width: 20%;
-                padding: 5px;
-                background-color: $bcolor;
-                color: $main-color;
+                border-radius: 20px;
+                width: 50%;
+                padding: 15px;
+                background-color: white;
+                color: black;
                 cursor: pointer;
-                border: 1px solid;
+                border: 1px solid white;
+                box-shadow: 0 0 10px black;
                 &:hover{
                     background-color: $main-color;
-                    color: $bcolor;
-                    border: 1px solid $bcolor;
+                    color: white;
+                    border: 1px solid $main-color;
+                    box-shadow: 0 0 5px white;
                 }
 
             }
-        h2{
-            color: $bcolor;
-        }
+        
 
         .input-container{
             display: flex;
@@ -76,9 +93,13 @@ $bcolor: #4477CE;
     .nav-container{
         width:100%;
         height: 50px;
-        background-color: #00224D;
+        background-color: $main-color;
+        border-bottom: 2px solid $headercolor;
         position:fixed;
         padding-bottom: 10px;
+        box-shadow: 0 0 15px $headercolor;
+
+        
 
         ul{
         list-style: none;
@@ -88,15 +109,110 @@ $bcolor: #4477CE;
         padding:5px;
         padding-left: 10px;
         padding-right: 10px;
+        li{
+            cursor: pointer;
+
         }
+        }
+
+        
+
     }
 
     .footer-container{
-        @extend .nav-container;
-        position: absolute;
-        bottom: 0;
+        width:100%;
+        height: 50px;
+        position: static;
+        bottom: 0px;
         display: flex;
         justify-content: center;
+        background-color: $main-color;
+    }
+
+    .home-container{
+        padding: 20px;
+        padding-top: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        align-items: center;
+
+        .inputContainer{
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            border: 2px solid $headercolor;
+            width: 400px;
+            overflow: hidden;
+            border-radius: 35px;
+            box-shadow:  0 0 5px;
+        }
+
+        .placeholder{
+            width:500px;
+            height: 500px;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0px 0px 10px grey;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            width: 460px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 10px grey;
+            background: $dark-vibz;
+            // background-image: url("../src/images/egpic.jpeg");
+            background-size: cover;
+            background-blend-mode: multiply;
+            
+            P{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                width: 400px;
+            }
+
+            hr{
+                width: 400px;
+                margin:0;
+                color: $headercolor;
+                border: 2px solid;
+                border-radius: 5px;
+                box-shadow: 0px 0px 10px grey;
+            }
+        }
+        input{
+                border: none;
+                height: 10px;
+                outline: none;
+                background-color: $main-color;
+                padding: 15px;
+                border-radius: 20px;
+                width: 300px;
+                color: white;
+                font-size: medium;
+        }
+       button {
+            border:none;
+            background-color: $main-color;
+            cursor: pointer;
+        }
+        .search-img{
+            width: 45px;
+            height:45px;
+            background-color: $bcolor;
+            border:1px solid;
+            border-radius: 10px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: px;
+
+        }
+        .search-img:hover{
+                border:1px solid grey;
+                box-shadow: 0 0 4px grey;
+            }
+
         
     }
 }
