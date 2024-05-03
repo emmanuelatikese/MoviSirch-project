@@ -9,27 +9,27 @@ const result = (props) => {
 
       <li>
       <h3>Title<hr/></h3>
-      <p className='p-result'>props.title</p>
+      <p className='p-result'>{props.title}</p>
       </li>
       <li>
       <h3>Overview<hr/></h3>
-      <p className='p-result'>props.Overview</p>
+      <p className='p-result'>{props.Overview}</p>
       </li>
       <li>
       <h3>Popularity<hr/></h3>
-      <p className='p-result'>props.Popularity</p>
+      <p className='p-result'>{props.Popularity}</p>
       </li>
       <li>
       <h3>Release date<hr/></h3>
-      <p className='p-result'>props.Release</p>
+      <p className='p-result'>{props.Release}</p>
       </li>
       <li>
       <h3>Vote average<hr/></h3>
-      <p className='p-result'>props.Vote</p>
+      <p className='p-result'>{props.Vote}</p>
       </li>
       <li>
       <h3>Vote count<hr/></h3>
-      <p className='p-result'>props.Count</p>
+      <p className='p-result'>{props.Count}</p>
       </li>
       </ul>
     </div>

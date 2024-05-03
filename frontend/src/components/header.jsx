@@ -13,14 +13,19 @@ const header = () => {
       console.log(data);
     }
     catch(err){
-      setError(err);
+      await setError(err);
     }
   }
   return (
     <div className='nav-container'>
       <ul>
         <li>MoviSirch</li>
-<li>Logout</li>
+<Link to={"/login"} onClick={handleLogout}
+style={{
+  textDecoration:"none",
+  color:"white"
+}}
+><li>Logout</li></Link>
       </ul>
     </div>
   )

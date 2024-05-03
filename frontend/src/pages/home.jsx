@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import Profile from "../images/placeholder.png";
 import Searchpic from "../images/search.png";
 import ResultComp from "../components/result";
@@ -30,18 +30,22 @@ const options = {
 
 const serachHandler = async()=>{
   try{
-    setValues([]);
+    setValues(null);
     const res = await axios.request(options);
     const data = res.data.results;
-    await setValues(data);
+    setValues(data);
     setShow(true);
-    console.log(values);
   }
   catch(err){
     setErr(err);
     setShow(false);
   }
 }
+
+  useEffect(() => {
+    console.log(values);
+  }, [values]);
+
 
 
   return (
@@ -54,7 +58,7 @@ const serachHandler = async()=>{
         <input type="text" name="search" placeholder='Enter to search for movies or series...' onChange={addSearch}/>
     </div>
 
-      {(show) && values.map((x)=> <ResultComp
+      {(show) && values && values.map((x)=> <ResultComp
       key={x.id}
       profile={x.poster_path}
       backdrop={x.backdrop_path}
