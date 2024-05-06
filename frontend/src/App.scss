@@ -221,4 +221,38 @@ $headercolor:#0ED2F7;
 
         
     }
+
+    .feature-container{
+        @extend .home-container;
+        p{
+            width: 500px;
+            gap: 10px;
+            h4{
+                text-align: center;
+            }
+        }
+        .land-png{
+            width: 900px;
+            height: 500px;
+            box-shadow: 0 0 10px white;
+        }
+        .listing{
+            gap:5px;
+            background: none;
+            box-shadow: none;
+            list-style-type: disc;
+        }
+        .result-p{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+            gap: 20px;
+            img{
+                box-shadow: 0 0 10px white;
+            }
+            
+            
+        }
+    }
 }

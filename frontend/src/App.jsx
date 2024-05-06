@@ -4,9 +4,8 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import Header from "./components/header";
 import Footer from "./components/footer";
-
-
-
+import Feature from "./pages/feature";
+import About from "./pages/about";
 import {
   createBrowserRouter,
   Outlet,
@@ -16,36 +15,39 @@ import {
 const router = createBrowserRouter([
   {
     path:"/",
-    element: <Register/>,
-  },
-  {
-    path:"/register",
-    element: <Register/>,
+    element: <Register />,
   },
   {
     path: "/login",
-    element: <Login/>,
+    element: <Login />,
   },
   {
-    path: "/home",
-    element: <HomeLayout/>,
-    children:[{
+    path: "/",
+    element: <HomeLayout />,
+    children:[
+    {
       path: "/home",
-      element: <Home/>,
-    }]
+      element: <Home />,
+    },
+    {
+      path:"/feature",
+      element: <Feature />
+    },
+    {
+      path: "/about",
+      element: <About />
+    }
+  ]
 
   }
- 
-
- 
 ]);
 
 function HomeLayout (){
   return(
     <div> 
-     <Header/>
+     <Header />
       <Outlet />
-     <Footer/>
+     <Footer />
     </div>
 
   )

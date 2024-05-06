@@ -54,7 +54,6 @@ const serachHandler = async()=>{
     <p className='name-title'>moviSirch</p>
     <div className='inputContainer'>
     <button onClick={serachHandler}><img src={Searchpic} className='search-img'/></button>
-      
         <input type="text" name="search" placeholder='Enter to search for movies or series...' onChange={addSearch}/>
     </div>
 
