@@ -21,29 +21,10 @@ const header = () => {
       <ul>
         <li>MoviSirch</li>
 
-    <Link to={"/home"} onClick={handleLogout}
-  style={{
-  textDecoration:"none",
-  color:"white"
-}}
-><li>Home</li>
-</Link>
 
-<Link to={"/feature"} onClick={handleLogout}
-style={{
-  textDecoration:"none",
-  color:"white"
-}}
-><li>Feature</li>
-</Link>
 
-<Link to={"/about"} onClick={handleLogout}
-style={{
-  textDecoration:"none",
-  color:"white"
-}}
-><li>About</li>
-</Link>
+
+
 
 <Link to={"/login"} onClick={handleLogout}
 style={{

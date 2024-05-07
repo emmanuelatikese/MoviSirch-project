@@ -4,8 +4,7 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import Feature from "./pages/feature";
-import About from "./pages/about";
+
 import {
   createBrowserRouter,
   Outlet,
@@ -29,14 +28,7 @@ const router = createBrowserRouter([
       path: "/home",
       element: <Home />,
     },
-    {
-      path:"/feature",
-      element: <Feature />
-    },
-    {
-      path: "/about",
-      element: <About />
-    }
+   
   ]
 
   }
