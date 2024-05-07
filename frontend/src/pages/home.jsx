@@ -9,6 +9,7 @@ const [error, setErr] = useState("");
 const [values, setValues] = useState(null);
 const [search, setSearch] = useState("");
 const [show, setShow] = useState(false);
+const [empty, setEmpty] = useState(false);
 
 const addSearch = (e) =>{
   e.preventDefault();
@@ -31,9 +32,16 @@ const options = {
 const serachHandler = async()=>{
   try{
     setValues(null);
+    setEmpty(false);
     const res = await axios.request(options);
     const data = res.data.results;
-    setValues(data);
+    if (data.length <= 0){
+      setEmpty(true);
+    }
+    else{
+      setEmpty(false);
+      setValues(data);
+    }
     setShow(true);
   }
   catch(err){
@@ -51,7 +59,7 @@ const serachHandler = async()=>{
   return (
     <div className='home-container'>
     <h1>Hi, welcome ...</h1>
-    <p className='name-title'>MoviSirch</p>
+    <p className='name-title'>MOVISIRCH</p>
     <div className='inputContainer'>
     <button onClick={serachHandler}><img src={Searchpic} className='search-img'/></button>
         <input type="text" name="search" placeholder='Enter to search for movies or series...' onChange={addSearch}/>
@@ -68,6 +76,7 @@ const serachHandler = async()=>{
       Vote={x.vote_average}
       Count={x.vote_count}
       />)}
+      {(empty) && <p>Not found</p>}
     </div>
   )
 }

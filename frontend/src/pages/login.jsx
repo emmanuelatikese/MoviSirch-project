@@ -29,7 +29,7 @@ const submitHandler = async(e) =>{
 
   }
   catch (err){
-    setError(err);
+    setError(err.response.data);
   }
 }
 
@@ -43,10 +43,10 @@ const submitHandler = async(e) =>{
         <input type='text'  placeholder='Username' required name="username" onChange={addValue} />
         <input type="password" name='password' required placeholder='Password' onChange={addValue}/>
       </div>
-        {error && <p>Error!</p>}
+        {error && <p>{error}!</p>}
         <button onClick={submitHandler} > Login</button>
 
-        <p>Do you have an account? Click <Link to="/register">Here</Link> </p>
+        <p>Do you have an account? Click <Link to="/">Here</Link> </p>
       </form>
     </div>
   )

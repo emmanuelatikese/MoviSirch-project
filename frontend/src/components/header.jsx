@@ -19,7 +19,7 @@ const header = () => {
   return (
     <div className='nav-container'>
       <ul>
-        <li>MoviSirch</li>
+        <li>MOVISIRCH</li>
 
 
 
