@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
 const dot = require("dotenv");
-const router = require("./routers/auth");
+const router = require("./routers/auth.js");
 dot.config();
 
 const cors = require("cors");
-const db = require ("../backend/db.js");
+const db = require ("./db.js");
 const cookie = require("cookie-parser");
 
 app.use(cors());
