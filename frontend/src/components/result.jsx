@@ -1,11 +1,22 @@
 import React from 'react'
+import {motion} from "framer-motion";
 
 const result = (props) => {
   return (
     <div className='result-container' >
-      <img src={props.profile} className='placeholder'/>
+      <motion.img 
+      whileHover={{
+      boxShadow:"0 0 20px pink",
+      borderColor:"pink"
+    }}
+      src={props.profile} className='placeholder'/>
 
-      <ul style={{backgroundImage:"url(" + props.backdrop + ")"}}>
+      <motion.ul 
+      whileHover={{
+      boxShadow:"0 0 20px pink",
+      borderColor:"pink"
+    }}
+      style={{backgroundImage:"url(" + props.backdrop + ")"}}>
 
       <li>
       <h3>Title<hr/></h3>
@@ -31,7 +42,7 @@ const result = (props) => {
       <h3>Vote count<hr/></h3>
       <p className='p-result'>{props.Count}</p>
       </li>
-      </ul>
+      </motion.ul>
     </div>
   )
 }

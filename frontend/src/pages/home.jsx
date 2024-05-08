@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 // import Profile from "../images/placeholder.png";
 import Searchpic from "../images/search.png";
 import ResultComp from "../components/result";
+import {motion} from "framer-motion";
 // import egpic from "../images/egpic.jpeg";
 import axios from 'axios';
 const home = () => {
@@ -58,12 +59,65 @@ const serachHandler = async()=>{
 
   return (
     <div className='home-container'>
-    <h1>Hi, welcome ...</h1>
-    <p className='name-title'>MOVISIRCH</p>
-    <div className='inputContainer'>
+    <motion.h1
+    initial={{
+      display:"none",
+      y: -10
+    }}
+    animate={{
+      display:"flex",
+      y:0,
+    }}
+    transition={{
+      duration: 10,
+      type:"tween"
+    }}
+    
+    >Welcome...</motion.h1>
+
+    <motion.p 
+    initial={{
+      x: -100,
+      display: "none"
+    }}
+
+    animate={{
+      x:0,
+      display:"flex"
+    }}
+    whileHover={{
+      scaleX: 1.2,
+      color:"#0ED2F7",
+      fontWeight:"Bolder"
+    }}
+    className='name-title'
+    >MOVISIRCH</motion.p>
+    <motion.div 
+    initial={{
+      y: -50,
+      display: "none"
+      }
+    }
+
+    animate={{
+      y: 0,
+      display:"flex",
+      duration: 20,
+    }}
+
+    transition={{
+      type:'tween',
+      duration:1
+    }}
+
+    whileTap={{
+      boxShadow:"0 0 20px pink",
+      borderColor:"pink"
+    }}
+    className='inputContainer'>
     <button onClick={serachHandler}><img src={Searchpic} className='search-img'/></button>
-        <input type="text" name="search" placeholder='Enter to search for movies or series...' onChange={addSearch}/>
-    </div>
+        <input type="text" name="search" placeholder='Enter to search for movies or series...' onChange={addSearch} autoFocus/>
+    </motion.div>
 
       {(show) && values && values.map((x)=> <ResultComp
       key={x.id}
