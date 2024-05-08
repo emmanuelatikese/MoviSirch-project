@@ -11,7 +11,7 @@ const register = () => {
   password: ""
 });
 
-const Url = "https://movi-sirch-project-sr.vercel.app/api/register";
+const Url = "http://localhost:5000/api/register";
 const [error, setError] = useState(null);
 
 const navigate = useNavigate();
