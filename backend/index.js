@@ -11,11 +11,7 @@ const cookie = require("cookie-parser");
 app.use(cors());
 app.use(express.json());
 app.use(cookie());
-app.use("/", (res, req)=>{
-    res.json({
-        "name": "hello"
-    })
-})
+
 app.use('/api', router);
 
 const Port = process.env.PORT || 3000;
