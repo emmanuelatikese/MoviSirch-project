@@ -9,7 +9,7 @@ const login = () => {
   password: ""
 });
 
-const Url = "http://localhost:5000/api/login";
+const Url = "https://movi-sirch-project-sr.vercel.app/api/login";
 const [error, setError] = useState(null);
 
 const navigate = useNavigate();

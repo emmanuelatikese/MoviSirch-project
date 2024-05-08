@@ -10,7 +10,7 @@ const nav = useNavigate();
 const ctl = useAnimation();
   const handleLogout = async()=>{
     try{
-      const data = await axios.post("http://localhost:5000/api/logout");
+      const data = await axios.post("https://movi-sirch-project-sr.vercel.app/api/logout");
       nav("/login");
       console.log(data);
     }
