@@ -9,7 +9,7 @@ const login = () => {
   password: ""
 });
 
-const Url = "https://main--famous-nougat-eca3ac.netlify.app/api/login";
+const Url = "http://localhost:5000/api/login";
 const [error, setError] = useState(null);
 
 const navigate = useNavigate();
