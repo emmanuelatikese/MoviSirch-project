@@ -1,6 +1,6 @@
 const mysql = require("mysql");
 
-
+// MySQL database connections
 const db = mysql.createConnection
 ({
     host: "sql8.freesqldatabase.com",

@@ -2,9 +2,7 @@ const db = require("../db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-// registrations
-
-
+// registration controller configuration wit mysql
 const register = (req, res) => {
     const username = req.body.username;
     const email = req.body.email;
@@ -29,7 +27,7 @@ const register = (req, res) => {
 }
 
 
-// login
+// login configuration with mysql
 
 const login = (req, res) => {
     const username = req.body.username;
@@ -51,7 +49,7 @@ const login = (req, res) => {
 
 
 
-//logout
+//logout configuration
 
 const logout = (req, res) => {
     res.clearCookie("access_token", {
