@@ -21,6 +21,7 @@ const addSearch = (e) =>{
   setSearch(e.target.value);
 }
 
+//sets up the authorization keys of the api database.
 const options = {
   method: 'GET',
   url: 'https://advanced-movie-search.p.rapidapi.com/search/movie',
@@ -56,6 +57,7 @@ const serachHandler = async()=>{
   }
 }
 
+// this set up the value into the home.
   useEffect(() => {
     console.log(values);
   }, [values]);
