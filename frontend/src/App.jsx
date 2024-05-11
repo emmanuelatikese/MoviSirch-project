@@ -1,4 +1,4 @@
-import './App.scss'
+import './App.scss'; // adding scss to the app.
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
@@ -11,6 +11,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+//creating a router using a react dom.
 const router = createBrowserRouter([
   {
     path:"/",
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
   }
 ]);
 
+//this function uses outlet function 
 function HomeLayout (){
   return(
     <div> 
@@ -45,6 +47,7 @@ function HomeLayout (){
   )
 }
 
+//This holds up the routing and pages that setup.
 function App() {
 
 

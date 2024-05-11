@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
-// import Profile from "../images/placeholder.png";
+
 import Searchpic from "../images/search.png";
 import ResultComp from "../components/result";
 import {motion} from "framer-motion";
-// import egpic from "../images/egpic.jpeg";
 import axios from 'axios';
+
+// set up the home page.
+//adding some animation to the card and search.
+
 const home = () => {
+
 const [error, setErr] = useState("");
 const [values, setValues] = useState(null);
 const [search, setSearch] = useState("");
@@ -30,6 +34,7 @@ const options = {
   }
 };
 
+// This function handles the search to the api.
 const serachHandler = async()=>{
   try{
     setValues(null);

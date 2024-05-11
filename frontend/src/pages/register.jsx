@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
+// setting up the registration page.
 const register = () => {
 
   const [val, setVal] = useState({
@@ -16,6 +16,7 @@ const [error, setError] = useState(null);
 
 const navigate = useNavigate();
 
+// adding values to the value.
 const addValue = (e) => {
 setVal((prev) => ({ ...prev, [e.target.name]: e.target.value}));
 };

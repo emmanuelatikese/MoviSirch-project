@@ -1,6 +1,9 @@
 import React from 'react'
 import {motion} from "framer-motion";
 
+
+// setting up result card for the movie.
+// setting up some animation using framer-motion.
 const result = (props) => {
   return (
     <div className='result-container' >

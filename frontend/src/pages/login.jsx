@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Link, useNavigate} from 'react-router-dom'
 import axios from 'axios';
 
+// set up the login page 
 const login = () => {
 
   const [val, setVal] = useState({
@@ -14,6 +15,7 @@ const [error, setError] = useState(null);
 
 const navigate = useNavigate();
 
+//adding values to value variable
 const addValue = (e) => {
 setVal((prev) => ({ ...prev, [e.target.name]: e.target.value}));
 };

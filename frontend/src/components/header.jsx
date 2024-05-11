@@ -3,14 +3,20 @@ import {useNavigate, Link} from "react-router-dom";
 import axios from "axios";
 import { motion, useAnimation } from 'framer-motion';
 
+
+// setting up the header component.
+// setting up animation.
+
 const header = () => {
 const {error, setError} = useState(null);
 const nav = useNavigate();
 
 const ctl = useAnimation();
-  const handleLogout = async()=>{
+
+//this handles the logout 
+const handleLogout = async()=>{
     try{
-      const data = await axios.post("http:localhost:5000api/logout");
+      const data = await axios.post("http://localhost:5000/api/logout");
       nav("/login");
       console.log(data);
     }
