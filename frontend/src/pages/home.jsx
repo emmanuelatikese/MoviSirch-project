@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
-
 import Searchpic from "../images/search.png";
 import ResultComp from "../components/result";
 import {motion} from "framer-motion";
-import axios from 'axios';
+import addSearch from '../components/addSearch';
+import searchHandler from '../components/searchHandler';
+import { useState, useEffect } from "react";
 
 // set up the home page.
 //adding some animation to the card and search.
-
 const home = () => {
 
 const [error, setErr] = useState("");
@@ -16,10 +15,6 @@ const [search, setSearch] = useState("");
 const [show, setShow] = useState(false);
 const [empty, setEmpty] = useState(false);
 
-const addSearch = (e) =>{
-  e.preventDefault();
-  setSearch(e.target.value);
-}
 
 //sets up the authorization keys of the api database.
 const options = {
@@ -35,33 +30,12 @@ const options = {
   }
 };
 
-// This function handles the search to the api.
-const serachHandler = async()=>{
-  try{
-    setValues(null);
-    setEmpty(false);
-    const res = await axios.request(options);
-    const data = res.data.results;
-    if (data.length <= 0){
-      setEmpty(true);
-    }
-    else{
-      setEmpty(false);
-      setValues(data);
-    }
-    setShow(true);
-  }
-  catch(err){
-    setErr(err);
-    setShow(false);
-  }
-}
+
 
 // this set up the value into the home.
-  useEffect(() => {
+useEffect(() => {
     console.log(values);
   }, [values]);
-
 
 
   return (
@@ -82,7 +56,7 @@ const serachHandler = async()=>{
     
     >Welcome...</motion.h1>
 
-    <motion.p 
+    <motion.p
     initial={{
       x: -100,
       display: "none"
@@ -97,9 +71,10 @@ const serachHandler = async()=>{
       color:"#0ED2F7",
       fontWeight:"Bolder"
     }}
-    className='name-title'
-    >MOVISIRCH</motion.p>
-    <motion.div 
+    className='name-title'>
+    MOVISIRCH
+    </motion.p>
+    <motion.div
     initial={{
       y: -50,
       display: "none"
@@ -122,8 +97,19 @@ const serachHandler = async()=>{
       borderColor:"pink"
     }}
     className='inputContainer'>
-    <button onClick={serachHandler}><img src={Searchpic} className='search-img'/></button>
-        <input type="text" name="search" placeholder='Enter to search for movies or series...' onChange={addSearch} autoFocus/>
+    <button onClick={() => 
+      searchHandler(setValues,
+        setEmpty,
+        options,
+        setShow,
+        setErr)}>
+        <img src={Searchpic} className='search-img'/>
+      </button>
+      <input type="text"
+      name="search"
+      placeholder='Enter to search for movies or series...'
+      onChange={(e)=>addSearch(e, setSearch)}
+      autoFocus/>
     </motion.div>
 
       {(show) && values && values.map((x)=> <ResultComp

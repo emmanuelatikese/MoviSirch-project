@@ -17,7 +17,7 @@ const result = (props) => {
       <motion.ul 
       whileHover={{
       boxShadow:"0 0 20px pink",
-      borderColor:"pink"
+      borderColor:"rgba(255, 102, 204, 1)"
     }}
       style={{backgroundImage:"url(" + props.backdrop + ")"}}>
 

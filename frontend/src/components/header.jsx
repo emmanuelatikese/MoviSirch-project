@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {useNavigate, Link} from "react-router-dom";
-import axios from "axios";
-import { motion, useAnimation } from 'framer-motion';
+import { motion} from 'framer-motion';
+import handleLogout from './handleLogout';
 
 
 // setting up the header component.
@@ -11,19 +11,8 @@ const header = () => {
 const {error, setError} = useState(null);
 const nav = useNavigate();
 
-const ctl = useAnimation();
 
-//this handles the logout 
-const handleLogout = async()=>{
-    try{
-      const data = await axios.post("http://localhost:5000/api/logout");
-      nav("/login");
-      console.log(data);
-    }
-    catch(err){
-      await setError(err);
-    }
-  }
+
   return (
     <motion.div 
     whileHover={{
@@ -42,7 +31,7 @@ const handleLogout = async()=>{
 
 
 
-<Link to={"/login"} onClick={handleLogout}
+<Link to={"/login"} onClick={()=>handleLogout(setError,nav)}
 style={{
   textDecoration:"none",
   color:"white"
