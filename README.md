@@ -1,6 +1,7 @@
 # MoviSirch
 ### INTRODUCTION
-![Screenshot 2024-05-03 011256](https://github.com/emmanuelatikese/MoviSirch-project/assets/104688960/812d0787-daec-4bad-9b12-e1f4ae11ccfc)
+
+![Screenshot 2024-05-03 011256](https://github.com/emmanuelatikese/MoviSirch-project/assets/104688960/97b313c1-c53f-4b09-b15f-08801b61f9a0)
 
 MoviSirch is a mini app built as a project to give relevant information on movies, series and others. 
 The app tabs it source from an api database: https://rapidapi.com/jakash1997/api/advanced-movie-search/
