@@ -5,7 +5,7 @@
 
 MoviSirch is a mini app built as a project to give relevant information on movies, series and others. 
 The app tabs it source from an api database: https://rapidapi.com/jakash1997/api/advanced-movie-search/
-More information on the app can be accessed on my linkedin profile:
+Article on the app can be accessed on my linkedin profile: https://www.linkedin.com/pulse/movisirch-project-emmanuel-atikese-nrhde
 
 ### INSTALLATION
 The app was built with:
