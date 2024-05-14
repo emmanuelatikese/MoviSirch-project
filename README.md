@@ -14,6 +14,8 @@ The app was built with:
 * Node.js: https://nodejs.org/en/download/
 * Sass: https://www.npmjs.com/package/sass
 * Framer-motion: https://www.framer.com/
+* MySql: https://www.npmjs.com/package/mysql
+* Bcrypt: https://www.npmjs.com/package/bycrypt
 
 ### Usage
 The app is quite simple which user just logs in their name and them head to the home page. The page consist of a search input where the user type the name of movie or anime. After clicking on the search icon the information on the movie or series appears like:
