@@ -1,4 +1,4 @@
-![Screenshot 2024-05-03 011509](https://github.com/emmanuelatikese/MoviSirch-project/assets/104688960/3301f669-97d5-4168-89b3-eb366accacd6)# MoviSirch
+# MoviSirch
 ### INTRODUCTION
 ![Screenshot 2024-05-03 011256](https://github.com/emmanuelatikese/MoviSirch-project/assets/104688960/812d0787-daec-4bad-9b12-e1f4ae11ccfc)
 MoviSirch is a mini app built as a project to give relevant information on movies, series and others. 
